@@ -40,11 +40,16 @@ class HomePage extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        subtitle: SizedBox(
-                          width: double.infinity,
-                          child: Image.network(
-                            snapshot.data[index]["image"].toString(),
-                            height: 200,
+                        subtitle: Padding(
+                          padding: const EdgeInsets.only(
+                            top: 20,
+                          ),
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: Image.network(
+                              snapshot.data[index]["image"].toString(),
+                              height: 200,
+                            ),
                           ),
                         ),
                       ),
