@@ -19,31 +19,32 @@ class HomePage extends StatelessWidget {
                   itemCount: snapshot.data.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 30,
+                      ),
                       child: ListTile(
                         leading: Text(
-                          snapshot.data[index]["id"].toString(),
+                          snapshot.data[index]["price"].toString() + " BDT",
                           style: const TextStyle(
                             color: Colors.deepOrange,
                             fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                         title: Text(
-                          snapshot.data[index]['title'],
+                          snapshot.data[index]["title"],
                           style: const TextStyle(
-                            color: Colors.deepOrange,
+                            color: Colors.black54,
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        subtitle: Text(
-                          snapshot.data[index]['body'],
-                          textAlign: TextAlign.justify,
-                          style: const TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.black54,
+                        subtitle: SizedBox(
+                          width: double.infinity,
+                          child: Image.network(
+                            snapshot.data[index]["image"].toString(),
+                            height: 200,
                           ),
                         ),
                       ),
